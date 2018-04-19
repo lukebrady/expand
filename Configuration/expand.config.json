@@ -1,0 +1,16 @@
+{
+    "config" : {
+        "ARMS-DC" : {
+            "disk0" : {
+                "letter" : "C",
+                "quota"  : 300
+            }
+        },
+        "ES1-DC" : {
+            "disk0" : {
+                "letter" : "C",
+                "quota"  : 50
+            }
+        }
+    }
+}
