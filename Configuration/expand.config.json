@@ -1,12 +1,12 @@
 {
     "config" : {
-        "ARMS-DC" : {
+        "Server1" : {
             "disk0" : {
                 "letter" : "C",
                 "quota"  : 300
             }
         },
-        "ES1-DC" : {
+        "Server2" : {
             "disk0" : {
                 "letter" : "C",
                 "quota"  : 50
