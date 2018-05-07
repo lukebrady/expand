@@ -24,8 +24,16 @@ function Get-ExDiskQuota
     (
         [Parameter(Mandatory=$true,
                    ValueFromPipelineByPropertyName=$false)]
-        [Hashtable]
-        $Server
+        [String]
+        $Server,
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$false)]
+        [String]
+        $Drive,
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$false)]
+        [String]
+        $Quota
     )
     
 }

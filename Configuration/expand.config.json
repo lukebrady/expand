@@ -1,12 +1,7 @@
 {
-    "Server1" : {
+    "Dev-Expand.ung.co" : {
         "C" : {
             "quota"  : 300
-        }
-    },
-    "Server2" : {
-        "C" : {
-            "quota"  : 50
         }
     }
 }

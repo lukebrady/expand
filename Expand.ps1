@@ -34,11 +34,31 @@ function Read-ExConfiguration {
     }
 }
 
-$config = Read-ExConfiguration -Path $PSScriptRoot\Configuration\expand.config.json
-$keys = $config.Keys
-$confArr = @()
-foreach($key in $keys) {
-    $confArr += $config.$key
+function Get-Credentials {
+    Param (
+        # Parameter help description
+        [Parameter(Mandatory = $true)]
+        [String]
+        $Path
+    )
+    Process {
+        # Read in the JSON configuration file supplied to the function.
+        $credHash = Get-Content -Raw -Path $Path | ConvertFrom-Json | Convertto-ExHashTable
+        $secpasswd = ConvertTo-SecureString $credHash.Password -AsPlainText -Force
+        $cred = New-Object System.Management.Automation.PSCredential ($credHash.Username, $secpasswd)
+    }
+    End {
+        # Return the config hashtable.
+        return $cred
+    }    
 }
 
-$confArr[1].Keys
+$config = Read-ExConfiguration -Path $PSScriptRoot\Configuration\expand.config.json
+$cred = Get-Credentials -Path $PSScriptRoot\Configuration\credential.json
+$keys = $config.Keys
+# $confArr = @()
+foreach($key in $keys) {
+    Invoke-Command -ComputerName $key -Credential $cred -ScriptBlock {
+        Get-PSDrive
+    }
+}
