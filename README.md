@@ -1,2 +1,2 @@
 # expand
-Cloud and bare-metal storage automation.
+Cloud and bare-metal disk management automation.

@@ -8,7 +8,8 @@
     University of North Georgia 2018
 #>
 
-. $PSScriptRoot\Functions\New-ExDiskQuota.ps1
+. $PSScriptRoot\Functions\ConvertTo-ExHashTable.ps1
+. $PSScriptRoot\Functions\Get-ExDiskQuota.ps1
 . $PSScriptRoot\Functions\New-ExReport.ps1
 . $PSScriptRoot\Functions\Set-ExDiskIncrease.ps1
 . $PSScriptRoot\Functions\Set-ExDiskDecrease.ps1

@@ -1,16 +1,12 @@
 {
-    "config" : {
-        "Server1" : {
-            "disk0" : {
-                "letter" : "C",
-                "quota"  : 300
-            }
-        },
-        "Server2" : {
-            "disk0" : {
-                "letter" : "C",
-                "quota"  : 50
-            }
+    "Server1" : {
+        "C" : {
+            "quota"  : 300
+        }
+    },
+    "Server2" : {
+        "C" : {
+            "quota"  : 50
         }
     }
 }
