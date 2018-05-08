@@ -58,7 +58,8 @@ $cred = Get-Credentials -Path $PSScriptRoot\Configuration\credential.json
 $keys = $config.Keys
 # $confArr = @()
 foreach($key in $keys) {
-    Invoke-Command -ComputerName $key -Credential $cred -ScriptBlock {
-        Get-PSDrive
+    $driveKeys = $config.$key.Keys 
+    foreach($drive in $driveKeys) {
+        Get-ExDiskQuota -Server $key -Drive $drive -Quota $config.$key.$drive.quota   
     }
 }

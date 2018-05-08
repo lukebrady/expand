@@ -36,4 +36,5 @@ function Get-ExDiskQuota
         $Quota
     )
     
+    Write-Host "$Server has a $Drive drive with a quota of $Quota GB."
 }

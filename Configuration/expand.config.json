@@ -1,7 +1,15 @@
 {
-    "Dev-Expand.ung.co" : {
+    "Dev-Expand" : {
         "C" : {
             "quota"  : 300
+        },
+        "D": {
+            "quota" : 400
+        }
+    },
+    "Dev-Puppet" : {
+        "C" : {
+            "quota" : 50
         }
     }
 }
